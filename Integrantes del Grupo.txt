@@ -1,0 +1,30 @@
+GRUPO: 
+TP Integrador - Desarrollo de Sistemas de Informacion (DESI) 2026
+UTN FRSF - TUTI
+
+INTEGRANTES
+-----------
+- Matías Hernández 
+DNI:44851446
+Email:mehernandez@frsf.utn.edu.ar
+- Sebástian Hernández 
+DNI:44851447
+Email:sahernandez@frsf.utn.edu.ar
+- Julián Llopis 
+DNI:35705208
+Email:jllopis@frsf.utn.edu.ar
+- Kareliz Pérez
+ DNI:95951911
+Email:kperezleon@frsf.utn.edu.ar
+
+REPOSITORIO
+-----------
+URI: https://github.com/jdllopis7-ne/ayerAndaba.git
+Branch a corregir: master
+
+EPICS IMPLEMENTADOS
+-------------------
+Epic 1 - ABMC de Propiedades  : (integrante responsable)
+Epic 2 - ABMC de Publicaciones: (integrante responsable)
+Epic 3 - ABMC de Contratos    : (integrante responsable)
+Epic 4 - ABMC de Facturas     : (integrante responsable)
