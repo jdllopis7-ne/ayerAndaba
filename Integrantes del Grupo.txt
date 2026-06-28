@@ -7,7 +7,7 @@ INTEGRANTES
 - Matías Hernández 
 DNI:44851446
 Email:mehernandez@frsf.utn.edu.ar
-- Sebástian Hernández 
+- Sebastián Hernández 
 DNI:44851447
 Email:sahernandez@frsf.utn.edu.ar
 - Julián Llopis 
@@ -24,7 +24,7 @@ Branch a corregir: master
 
 EPICS IMPLEMENTADOS
 -------------------
-Epic 1 - ABMC de Propiedades  : (integrante responsable)
-Epic 2 - ABMC de Publicaciones: (integrante responsable)
-Epic 3 - ABMC de Contratos    : (integrante responsable)
-Epic 4 - ABMC de Facturas     : (integrante responsable)
+Epic 1 - ABMC de Propiedades  : (Julián Llopis)
+Epic 2 - ABMC de Publicaciones: (Kareliz Pérez)
+Epic 3 - ABMC de Contratos    : (Matías Hernández)
+Epic 4 - ABMC de Facturas     : (Sebastián Hernández)
