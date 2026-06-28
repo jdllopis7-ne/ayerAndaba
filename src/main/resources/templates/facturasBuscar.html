@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Buscar Facturas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+    <div class="starter-template"><h1>Inmobiliaria</h1><h2>Buscar Facturas</h2></div>
+    <form th:action="@{/facturasBuscar}" th:object="${formBean}" method="post">
+        <p th:each="err : ${#fields.globalErrors()}" th:text="${err}" class="error"></p>
+        <table border="1" style="align-self: center;">
+            <tr><td>Contrato</td><td><select th:field="*{contratoSeleccionado}"><option value="">Todos</option><option th:each="c : ${allContratos}" th:value="${c.id}" th:text="${'#' + c.id + ' - ' + c.propiedad.direccion + ' - ' + c.inquilino.apellido}"></option></select></td></tr>
+            <tr><td>Propiedad</td><td><select th:field="*{propiedadSeleccionada}"><option value="">Todas</option><option th:each="p : ${allPropiedades}" th:value="${p.id}" th:text="${p.direccion + ' - ' + p.ciudad.nombre}"></option></select></td></tr>
+            <tr><td>Inquilino</td><td><select th:field="*{inquilinoSeleccionado}"><option value="">Todos</option><option th:each="p : ${allPersonas}" th:value="${p.id}" th:text="${p.apellido + ', ' + p.nombre}"></option></select></td></tr>
+            <tr><td>Estado</td><td><select th:field="*{estado}"><option value="">Todos</option><option th:each="e : ${allEstados}" th:value="${e}" th:text="${e.descripcion}"></option></select></td></tr>
+            <tr><td>Vencimiento desde</td><td><input type="date" th:field="*{vencimientoDesde}" /></td></tr>
+            <tr><td>Vencimiento hasta</td><td><input type="date" th:field="*{vencimientoHasta}" /></td></tr>
+        </table>
+        <table class="botones"><tr><td><button type="submit" name="action" value="actionBuscar">Buscar</button></td><td><button type="submit" name="action" value="actionCancelar">Cancelar</button></td><td><button type="submit" name="action" value="actionRegistrar">Registrar</button></td></tr></table>
+        <table class="resultados" border="0" style="align-self: center;">
+            <thead><tr><th>ID</th><th>Contrato</th><th>Propiedad</th><th>Inquilino</th><th>Emision</th><th>Vencimiento</th><th>Importe</th><th>Estado</th><th></th><th></th></tr></thead>
+            <tbody><tr th:each="f : ${resultados}">
+                <td th:text="${f.id}"></td><td th:text="${f.contrato.id}"></td><td th:text="${f.contrato.propiedad.direccion}"></td><td th:text="${f.contrato.inquilino.apellido + ', ' + f.contrato.inquilino.nombre}"></td><td th:text="${f.fechaEmision}"></td><td th:text="${f.fechaVencimiento}"></td><td th:text="${f.importe}"></td><td th:text="${f.estado.descripcion}"></td>
+                <td><a th:href="@{/facturaEditar/{id}(id=${f.id})}">editar</a></td>
+                <td><button type="submit" th:formaction="@{/facturasBuscar/delete(id=${f.id})}" formmethod="post" onclick="return confirm('Seguro que deseas eliminar esta factura?');">eliminar</button></td>
+            </tr></tbody>
+        </table>
+    </form>
+</body>
+</html>
